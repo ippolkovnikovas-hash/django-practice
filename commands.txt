@@ -1,0 +1,73 @@
+# python3 -m venv venv
+# source venv/bin/activate -- venv\Scripts\activate.bat
+# deactivate
+
+# cd /mnt/c/Users/Buh/Desktop/Skillbox/python_django
+
+# pip install django
+
+# pip freeze > requirements.txt
+# python -m django startproject mysite
+
+# python manage.py runserver
+
+# python manage.py migrate
+
+# python manage.py createsuperuser
+
+# login: admin
+# password: admin
+
+# python manage.py help
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[contenttypes]
+    remove_stale_contenttypes
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    optimizemigration
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+
+[sessions]
+    clearsessions
+
+[staticfiles]
+    collectstatic
+    findstatic
+    runserver
+
+
+# python manage.py startapp shopapp - создание приложение, где shopapp изменяемое название
+
+# python manage.py makemigrations - создать миграции если таковые есть
+# python manage.py showmigrations - покажет миграции для всех приложений
+# python manage.py migrate shopapp
+
+# python manage.py migrate shopapp 0002 - пример предидущей миграции, откат на один шак назад
