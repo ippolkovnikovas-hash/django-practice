@@ -7,6 +7,14 @@
 {% block body %}
     <h1>Hello Shop Index!</h1>
 
+    <nav>
+        <ul>
+            <li><a href="{% url 'shopapp:products_list' %}">Товары</a></li>
+            <li><a href="{% url 'shopapp:orders_list' %}">Заказы</a></li>
+            <li><a href="{% url 'shopapp:groups_list' %}">Группы</a></li>
+        </ul>
+    </nav>
+
     <p>User: {{ username|upper }}</p>
 
     <div>
@@ -19,7 +27,6 @@
             {% empty %}
                 No products here
             {% endfor %}
-
         </ul>
     </div>
 
