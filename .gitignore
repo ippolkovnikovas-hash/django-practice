@@ -133,3 +133,4 @@ dmypy.json
 # Jetbrains Intellij IDEA
 .idea//mysite/
 commands.txt 
+identifier.sqlite 
