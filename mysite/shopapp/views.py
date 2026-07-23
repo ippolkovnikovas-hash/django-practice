@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect, reverse
 
-from .forms import ProductForm
+from .forms import ProductForm, OrderForm
 from .models import Product, Order
 
 
@@ -53,3 +53,20 @@ def orders_list(request: HttpRequest):
         "orders": Order.objects.select_related("user").prefetch_related("products").all(),
     }
     return render(request, 'shopapp/orders-list.html', context=context)
+
+def create_order(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            order.user = request.user
+            order.save()
+            form.save_m2m()
+            url = reverse('shopapp:orders_list')
+            return redirect(url)
+    else:
+        form = OrderForm()
+    context = {
+        "form": form,
+    }
+    return render(request, 'shopapp/create-order.html', context=context)
