@@ -3,7 +3,6 @@ from django.core.management import BaseCommand
 
 from shopapp.models import Order
 
-
 class Command(BaseCommand):
     def handle(self, *args, **options):
         self.stdout.write("Create order")
@@ -13,4 +12,4 @@ class Command(BaseCommand):
             promocode="SALE123",
             user=user,
         )
-        self.stdout.write(f"Created order {order}")
+        self.stdout.write(f"Order created {order}")
