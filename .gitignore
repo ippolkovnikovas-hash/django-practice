@@ -134,3 +134,4 @@ dmypy.json
 .idea//mysite/
 commands.txt 
 identifier.sqlite 
+".idea/" 

@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-
 class Product(models.Model):
     class Meta:
         ordering = ["name", "price"]
@@ -10,19 +9,20 @@ class Product(models.Model):
 
     name = models.CharField(max_length=100)
     description = models.TextField(null=False, blank=True)
-    price = models.DecimalField(default=0, max_digits=8, decimal_places=2)
-    discount = models.SmallIntegerField(default=0)
+    price = models.DecimalField(default=0, max_digits=10, decimal_places=2)
+    discount = models.PositiveSmallIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     archived = models.BooleanField(default=False)
 
-    # @property
-    # def description_short(self):
-    #     if len(self.description) < 50:
-    #         return self.description
-    #     return self.description[:48] + "..."
+    #@property
+    #def description_short(self) -> str:
+    #    if len(self.description) < 48:
+    #        return self.description
+    #    return self.description[:48] + "..."
 
-    def __str__(self):
-        return f"Product(pk={self.pk}, name={self.name!r})"
+
+    def __str__(self) -> str:
+        return f"Product(pk={self.pk}, name= {self.name}!r)"
 
 
 class Order(models.Model):
