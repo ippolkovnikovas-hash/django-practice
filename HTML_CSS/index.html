@@ -13,6 +13,9 @@
         document.addEventListener("DOMContentLoaded", function(){
             var container = document.querySelector('.popup-container');
             var popupButtons = document.querySelectorAll('.open-popup');
+            var popupForm = container.querySelector('.popup');
+            var submitButton = popupForm.querySelector('button[type="submit"]');
+
             for (let i = 0; i < popupButtons.length; i++) {
                 popupButtons[i].addEventListener('click', function(){
                     container.style.display = 'flex';
@@ -20,9 +23,17 @@
             }
 
             container.addEventListener('click', function(event){
-                if(event.target == container) {
+                if (event.target == container) {
                     container.style.display = 'none';
                 }
+            });
+
+            // Закрытие попапа по кнопке "Отправить"
+            submitButton.addEventListener('click', function(event){
+                event.preventDefault(); // отменяем стандартную отправку формы (перезагрузку страницы)
+
+                container.style.display = 'none'; // скрываем попап
+                popupForm.reset(); // очищаем поля формы
             });
         });
         </script>
