@@ -52,7 +52,7 @@ def orders_list(request: HttpRequest):
     context = {
         "orders": Order.objects.select_related("user").prefetch_related("products").all(),
     }
-    return render(request, 'shopapp/orders-list.html', context=context)
+    return render(request, 'shopapp/order_list.html', context=context)
 
 def create_order(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
