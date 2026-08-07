@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <title>
         {% block title %}
-            Base Title
+
         {% endblock %}
     </title>
 </head>
 <body>
-
 {% block body %}
-    Base body
+
 {% endblock %}
 
+<br>
 <div>
-  {% now 'H:i' %}
+    HTTP User-Agent {{ request.user_agent }}
 </div>
-<div>
-    {% now 'l' as current_weekday %}
-    Toda is {{ current_weekday }}
-</div>
-
 </body>
 </html>

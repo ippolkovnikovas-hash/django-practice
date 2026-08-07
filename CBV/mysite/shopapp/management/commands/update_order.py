@@ -5,13 +5,12 @@ from shopapp.models import Order, Product
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        order = Order.objects.first()
+        order= Order.objects.first()
         if not order:
-            self.stdout.write("no order found")
+            self.stdout.write(("No order found"))
             return
 
         products = Product.objects.all()
-
         for product in products:
             order.products.add(product)
 
