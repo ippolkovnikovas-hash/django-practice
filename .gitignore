@@ -135,8 +135,16 @@ dmypy.json
 
 # Скретч-файлы, не нужные в репозитории
 commands.txt
-identifier.sqlite 
-"big.txt" 
-"small.txt" 
-"mysite/small.txt" 
-"mysite/textfile.txt" 
+identifier.sqlite
+big.txt
+small.txt
+mysite/small.txt
+mysite/textfile.txt
+
+# Fixture с реальными пользователями/хешами паролей — не публикуем
+mysite/shopapp/fixtures/users-fixture.json
+
+# Локальные переменные окружения / секреты
+.env
+.env.*
+!.env.example
