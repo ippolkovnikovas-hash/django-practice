@@ -1,0 +1,23 @@
+{% extends 'myauth/base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+    <p>Вы вошли как {{ user.username }}</p>
+    <form method="post" action="{% url 'myauth:logout' %}">
+        {% csrf_token %}
+        <button type="submit">Log out</button>
+    </form>
+{% else %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+{% endif %}
+
+{% endblock %}

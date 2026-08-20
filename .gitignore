@@ -148,3 +148,9 @@ mysite/shopapp/fixtures/users-fixture.json
 .env
 .env.*
 !.env.example
+
+# User-uploaded media and collected static files
+uploads/
+media/
+
+Files/mysite/shopapp/fixtures/users-fixture.json

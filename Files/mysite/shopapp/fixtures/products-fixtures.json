@@ -1,0 +1,54 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "Desktop",
+      "description": "",
+      "price": "2399.00",
+      "discount": 10,
+      "created_at": "2026-08-11T12:55:42.880Z",
+      "archived": false,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "Laptop",
+      "description": "new",
+      "price": "1999.00",
+      "discount": 15,
+      "created_at": "2026-08-11T12:56:01.682Z",
+      "archived": false,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "Smartphone",
+      "description": "",
+      "price": "999.00",
+      "discount": 20,
+      "created_at": "2026-08-11T12:56:17.977Z",
+      "archived": false,
+      "created_by": null
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "Desktop(new)",
+      "description": "by John and admin",
+      "price": "3999.00",
+      "discount": 10,
+      "created_at": "2026-08-11T14:40:22.421Z",
+      "archived": false,
+      "created_by": null
+    }
+  }
+]
